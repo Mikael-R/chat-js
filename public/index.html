@@ -1,54 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatJS</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
     <form id="chat">
-        <input type="text" name="username" placeholder="Digite aqui seu nome...">
+        <input type="text" name="username" autofocus placeholder="Digite aqui seu nome...">
         <div class="messages"></div>
-        <input type="text" name="message" placeholder="Digite aqui sua mensagem...">
+        <input type="text" name="message" autocomplete="off" placeholder="Digite aqui sua mensagem...">
         <button type="submit">Enviar</button>
     </form>
 
-    <script type="text/javascript">
-        const host = process.env.HEROKU_APP_NAME ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com` : "http://localhost"
-        const port = process.env.PORT || 3000
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
-        var socket = io(`${host}:${port}`)
+    <script type="text/javascript">
+        const socket = io()
 
         function renderMessage(message) {
             $('.messages').append(`
-            <div class="message">
-                <strong>${message.author}: ${message.message}</strong>
-            </div>
-            `)
+                    <div class="message">
+                        <strong>[${message.date.getHours()}:${message.date.getMinutes()}] ${message.author}: ${message.message}</strong>
+                    </div>
+                    `)
         }
 
-        socket.on('previusMessage', function(mensage) {
+        socket.on('recivedMessage', function (message) {
             renderMessage(message)
         })
 
-        socket.on('recivedMessage', function(message) {
-            renderMessage(message)
-        })
-
-        $('#chat').submit(function(event) {
+        $('#chat').submit(function (event) {
             event.preventDefault()
 
-            var author = $('input[name=username').val()
-            var message = $('input[name=message]').val()
+            let author = $('input[name=username').val()
+            let message = $('input[name=message]').val()
+            let date = new Date
 
             if (author.length && message.length) {
-                var messageObject = {
-                    author: author,
-                    message: message
+                let messageObject = {
+                    author,
+                    message,
+                    date
                 }
 
                 renderMessage(messageObject)
@@ -58,4 +55,5 @@
         })
     </script>
 </body>
+
 </html>

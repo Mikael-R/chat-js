@@ -1,28 +1,28 @@
 const express = require('express')
-const path = require('path')
 
 const app = express()
-const server = require('http').createServer(app)
-const io = require('socket.io')(server)
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.set('views', path.join(__dirname, 'public'))
-app.engine('html', require('ejs').renderFile)
-app.set('view engine', 'html')
+app.use(express.static('public'))
 
-app.use('/', (req, res) => {
-    res.render('index.html')
+const port = 3000
+
+http.listen(port, () => {
+    console.log(`> Server started on port ${port}`)
+})
+
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/public/index.html')
 })
 
 let messages = []
 
 io.on('connection', socket => {
-    console.log(`Socket conectado: ${socket.id}`)
+    console.log(`> Socket id conected: ${socket.id}`)
 
     socket.on('sendMessage', data => {
         messages.push(data)
         socket.broadcast.emit('recivedMessage', data)
     })
 })
-
-server.listen(process.env.PORT || 3000)

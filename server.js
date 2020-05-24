@@ -1,4 +1,5 @@
 const express = require('express')
+const { resolve } = require('path')
 const app = express()
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
@@ -12,7 +13,7 @@ http.listen(PORT, function () {
 })
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html')
+    res.sendFile(resolve(__dirname, 'public', 'index.html'))
 })
 
 let messages = []

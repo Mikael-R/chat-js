@@ -25,7 +25,7 @@
         function renderMessage(message) {
             $('.messages').append(`
                     <div class="message">
-                        <strong>[${message.date.getHours()}:${message.date.getMinutes()}] ${message.author}: ${message.message}</strong>
+                        <strong>[${new Date(message.date).getHours()}:${new Date(message.date).getMinutes()}] ${message.author}: ${message.message}</strong>
                     </div>
                     `)
         }

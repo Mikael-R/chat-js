@@ -15,15 +15,14 @@
         <input type="text" name="message" autocomplete="off" placeholder="Digite aqui sua mensagem...">
         <button type="submit">Enviar</button>
     </form>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
-    <script type="text/javascript">
+    <script>
         const socket = io()
 
         function renderMessage(message) {
-            $('.messages').append(`
+            document.querySelectorAll('.messages').append(`
                     <div class="message">
                         <strong>[${new Date(message.date).getHours()}:${new Date(message.date).getMinutes()}] ${message.author}: ${message.message}</strong>
                     </div>
@@ -34,11 +33,11 @@
             renderMessage(message)
         })
 
-        $('#chat').submit(function (event) {
+        document.querySelector('#chat').submit(function (event) {
             event.preventDefault()
 
-            let author = $('input[name=username').val()
-            let message = $('input[name=message]').val()
+            let author = document.querySelector('input[name=username').val()
+            let message = document.querySelector('input[name=message]').val()
             let date = new Date
 
             if (author.length && message.length) {

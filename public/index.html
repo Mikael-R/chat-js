@@ -1,59 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <title>ChatJS</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>ChatJS</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <form id="chat">
+    <input
+      type="text"
+      name="username"
+      autofocus
+      placeholder="Digite seu nome..."
+    >
+    <div class="messages"></div>
+    <input
+      type="text"
+      name="content"
+      autocomplete="off"
+      placeholder="Digite sua mensagem..."
+    >
+    <button type="submit">Enviar</button>
+  </form>
 
-    <form id="chat">
-        <input type="text" name="username" autofocus placeholder="Digite aqui seu nome...">
-        <div class="messages"></div>
-        <input type="text" name="message" autocomplete="off" placeholder="Digite aqui sua mensagem...">
-        <button type="submit">Enviar</button>
-    </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-
-    <script type="text/javascript">
-        const socket = io()
-
-        function renderMessage(message) {
-            $('.messages').append(`
-                    <div class="message">
-                        <strong>[${new Date(message.date).getHours()}:${new Date(message.date).getMinutes()}] ${message.author}: ${message.message}</strong>
-                    </div>
-                    `)
-        }
-
-        socket.on('recivedMessage', function (message) {
-            renderMessage(message)
-        })
-
-        $('#chat').submit(function (event) {
-            event.preventDefault()
-
-            let author = $('input[name=username').val()
-            let message = $('input[name=message]').val()
-            let date = new Date
-
-            if (author.length && message.length) {
-                let messageObject = {
-                    author,
-                    message,
-                    date
-                }
-
-                renderMessage(messageObject)
-
-                socket.emit('sendMessage', messageObject)
-            }
-        })
-    </script>
+  <script src="/chat.js"></script>
 </body>
-
 </html>

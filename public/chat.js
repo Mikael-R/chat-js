@@ -10,11 +10,9 @@ function formatDate(date) {
 }
 
 function renderMessage(message) {
-  $('.messages').append(`
+  document.getElementById('messages').innerHTML += (`
     <div class="message">
-        <strong>
-          ${formatDate(message.date)} ${message.author} diz: ${message.content}
-        </strong>
+        ${formatDate(message.date)} ${message.author} diz: ${message.content}
     </div>
   `)
 }
@@ -23,16 +21,18 @@ socket.on('recivedMessage', message => {
   renderMessage(message)
 })
 
-$('#chat').submit(event => {
+document.forms['chat'].addEventListener('submit', event => {
   event.preventDefault()
 
   const message = new Object
 
-  message.author = $('input[name=username').val()
-  message.content = $('input[name=content]').val()
+  message.author = document.getElementById('username').value
+  message.content = document.getElementById('message_content').value
   message.date = new Date
 
   if (message.author.length && message.content.length) {
+    document.getElementById('message_content').value = ''
+
     renderMessage(message)
 
     socket.emit('sendMessage', message)

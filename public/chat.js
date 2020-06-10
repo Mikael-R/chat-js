@@ -18,7 +18,7 @@ function renderMessage(message) {
     </div>
   `)
 
-  messages.scrollTop = 10**10
+  messages.scrollTop = messages.scrollHeight
 }
 
 socket.on('recivedMessage', message => {

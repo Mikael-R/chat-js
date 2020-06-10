@@ -10,11 +10,15 @@ function formatDate(date) {
 }
 
 function renderMessage(message) {
-  document.getElementById('messages').innerHTML += (`
+  const messages = document.getElementById('messages')
+
+  messages.innerHTML += (`
     <div class="message">
         ${formatDate(message.date)} ${message.author} diz: ${message.content}
     </div>
   `)
+
+  messages.scrollTop = 10**10
 }
 
 socket.on('recivedMessage', message => {

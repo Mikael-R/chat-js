@@ -11,18 +11,11 @@ function formatDate(date) {
 
 function renderMessage(message) {
   const messages = document.getElementById('messages')
-<<<<<<< HEAD
   
 //added minor styles for cleaner effect
   messages.innerHTML += (`
     <div class="message">
         <span class="date">${formatDate(message.date)}</span> <b>${message.author}</b>: ${message.content}
-=======
-
-  messages.innerHTML += (`
-    <div class="message">
-        ${formatDate(message.date)} ${message.author} diz: ${message.content}
->>>>>>> 1eac2fbf7171e8a504fb9107e7d4ef2bb6986902
     </div>
   `)
 

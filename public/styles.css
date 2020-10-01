@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .form-control-sm {
   height: 100%;
   display: flex;
@@ -33,90 +32,12 @@ input[type="text"] {
 .messages {
   width: 100%;
   height: 75%;
-=======
-:root {
-  --chat-width: 600px;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-#chat {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-input {
-  width: var(--chat-width);
-  border: 1px solid #ddd;
-  height: 50px;
-  padding: 0 20px;
-  font-size: 14px;
-}
-
-button {
-  width: var(--chat-width);
-  height: 50px;
-  font-size: 14px;
-  background: #069;
-  text-align: center;
-  line-height: 50px;
-  font-weight: bold;
-  color: #fff;
-  margin-top: 10px;
-  border-radius: 15px;
-  outline: none;
-}
-
-.messages {
-  width: var(--chat-width);
-  height: 400px;
->>>>>>> 1eac2fbf7171e8a504fb9107e7d4ef2bb6986902
   margin: 20px 0;
   border: 1px solid #ddd;
   padding: 20px;
   overflow: auto;
 }
 
-<<<<<<< HEAD
 .date {
   color: #bfbfbf;
 }
-=======
-@media (max-width: 615px) {
-  :root {
-    --chat-width: 500px;
-  }
-}
-@media (max-width: 528px) {
-  :root {
-    --chat-width: 450px;
-  }
-}
-@media (max-width: 476px) {
-  :root {
-    --chat-width: 400px;
-  }
-}
-@media (max-width: 420px) {
-  :root {
-    --chat-width: 350px;
-  }
-}
-@media (max-width: 409px) {
-  :root {
-    --chat-width: 300px;
-  }
-}
->>>>>>> 1eac2fbf7171e8a504fb9107e7d4ef2bb6986902

@@ -10,6 +10,10 @@
   flex-direction: column;
 }
 
+body {
+  
+}
+
 input {
   width: var(--chat-width);
   border: 1px solid #ddd;

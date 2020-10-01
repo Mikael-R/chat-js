@@ -1,3 +1,3 @@
-# Get Started!
+# ChatJS
 
-Add files and start typing 🎉
+Simple chat using socket.io

@@ -52,28 +52,38 @@ button {
   overflow: auto;
 }
 
-@media (max-width: 615px) {
-  :root {
-    --chat-width: 500px;
+/* responsive styling for mobile devices */
+@media (max-width: 600px) {
+  /* making the chat form display block */
+  #chat {
+    display: block;
   }
-}
-@media (max-width: 528px) {
-  :root {
-    --chat-width: 450px;
+
+  /* setting the width and margin of username input box */
+  #username {
+    width: 360px;
+    margin-top: 10px;
+    margin-left: 40px;
   }
-}
-@media (max-width: 476px) {
-  :root {
-    --chat-width: 400px;
+
+  /* styling for messages div */
+  #messages {
+    width: 360px;
+    margin-top: 10px;
+    margin-left: 40px;
   }
-}
-@media (max-width: 420px) {
-  :root {
-    --chat-width: 350px;
+
+  /* styling for the message_content */
+  #message_content {
+    width: 360px;
+    margin-top: 10px;
+    margin-left: 40px;
   }
-}
-@media (max-width: 409px) {
-  :root {
-    --chat-width: 300px;
+
+  /* styling for the button */
+  button {
+    width: 70px;
+    height: 50px;
+    margin-left: 160px;
   }
 }

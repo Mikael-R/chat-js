@@ -13,7 +13,7 @@ body {
   box-sizing: border-box;
 }
 
-#chat {
+.form-control-sm {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -52,28 +52,6 @@ button {
   overflow: auto;
 }
 
-@media (max-width: 615px) {
-  :root {
-    --chat-width: 500px;
-  }
-}
-@media (max-width: 528px) {
-  :root {
-    --chat-width: 450px;
-  }
-}
-@media (max-width: 476px) {
-  :root {
-    --chat-width: 400px;
-  }
-}
-@media (max-width: 420px) {
-  :root {
-    --chat-width: 350px;
-  }
-}
-@media (max-width: 409px) {
-  :root {
-    --chat-width: 300px;
-  }
+.form-control-sm {
+  margin-bottom: 10px;
 }

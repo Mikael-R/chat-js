@@ -1,7 +1,3 @@
-:root {
-  --chat-width: 600px;
-}
-
 .form-control-sm {
   height: 100%;
   display: flex;
@@ -10,20 +6,24 @@
   flex-direction: column;
 }
 
-body {
-  
+html {
+  width: 100%;
+  height: 100%;
 }
 
-input {
-  width: var(--chat-width);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control-sm {
+  width: 80%;
   border: 1px solid #ddd;
-  height: 50px;
-  padding: 0 20px;
-  font-size: 14px;
 }
 
 button {
-  width: var(--chat-width);
+  width: 80%;
   height: 50px;
   font-size: 14px;
   background: #069;
@@ -37,8 +37,8 @@ button {
 }
 
 .messages {
-  width: var(--chat-width);
-  height: 400px;
+  width: 80%;
+  height: 75%;
   margin: 20px 0;
   border: 1px solid #ddd;
   padding: 20px;

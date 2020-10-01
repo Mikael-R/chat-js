@@ -18,33 +18,16 @@ body {
 }
 
 .form-control-sm {
-  width: 80%;
+  width: 100%;
   border: 1px solid #ddd;
-}
-
-button {
-  width: 80%;
-  height: 50px;
-  font-size: 14px;
-  background: #069;
-  text-align: center;
-  line-height: 50px;
-  font-weight: bold;
-  color: #fff;
-  margin-top: 10px;
-  border-radius: 15px;
-  outline: none;
+  margin-bottom: 10px;
 }
 
 .messages {
-  width: 80%;
+  width: 100%;
   height: 75%;
   margin: 20px 0;
   border: 1px solid #ddd;
   padding: 20px;
   overflow: auto;
-}
-
-.form-control-sm {
-  margin-bottom: 10px;
 }

@@ -61,29 +61,35 @@ button {
 
   /* setting the width and margin of username input box */
   #username {
-    width: 360px;
-    margin-top: 10px;
-    margin-left: 40px;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 65px;
   }
 
   /* styling for messages div */
   #messages {
-    width: 360px;
-    margin-top: 10px;
-    margin-left: 40px;
+    width: 270px;
+    margin-top: 30px;
+    margin-left: 80px;
+    height: 280px;
   }
 
   /* styling for the message_content */
   #message_content {
-    width: 360px;
+    width: 250px;
     margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 80px;
   }
 
   /* styling for the button */
   button {
-    width: 70px;
+    position: relative;
+    top: -70px;
+    left: 180px;
+    width: 50px;
     height: 50px;
-    margin-left: 160px;
+    margin-left: 180px;
+    margin-top: 20px;
+    border-radius: 100px;
   }
 }

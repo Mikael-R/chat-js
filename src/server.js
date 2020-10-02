@@ -7,21 +7,21 @@ app.use(express.static('public'))
 
 const PORT = process.env.PORT || 5000
 
-http.listen(PORT, function () {
-  console.log(`> Started on port ${PORT}`)
+http.listen(PORT, function() {
+    console.log(`> Started on port ${PORT}`)
 })
 
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/index.html')
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/public/index.html')
 })
 
 let messages = []
 
 io.on('connection', socket => {
-  console.log(`> Socket id conected: ${socket.id}`)
+    console.log(`> Socket id conected: ${socket.id}`)
 
-  socket.on('sendMessage', data => {
-    messages.push(data)
-    socket.broadcast.emit('recivedMessage', data)
-  })
+    socket.on('sendMessage', data => {
+        messages.push(data)
+        socket.broadcast.emit('recivedMessage', data)
+    })
 })

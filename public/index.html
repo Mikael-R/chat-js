@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<<<<<<< HEAD
   <head>
     <title>chat-js</title>
     <link rel="stylesheet" href="styles.css" />
@@ -42,6 +43,51 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
+=======
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+
+  <head>
+    <title>chat-js</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body class="h-100">
+    <!--Change form size here, may affect mobile view negatively-->
+    <div style="width: 80%; height: 90%">
+      <form
+        id="chat"
+        class="h-100 form-group d-flex align-items-center flex-column justify-content-center"
+      >
+        <input
+          type="text"
+          id="username"
+          class="form-control-sm"
+          autofocus
+          placeholder="Digite seu nome..."
+        />
+        <div class="messages" id="messages"></div>
+        <input
+          type="text"
+          id="message_content"
+          class="form-control-sm"
+          autocomplete="off"
+          placeholder="Digite sua mensagem..."
+        />
+        <button type="submit" class="btn-sm btn-primary btn-block">
+          Enviar
+        </button>
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+>>>>>>> 7683e8b0079bc89152fccea71da93357738d4df5
     <script src="/chat.js"></script>
   </body>
 </html>

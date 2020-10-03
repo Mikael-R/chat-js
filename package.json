@@ -1,5 +1,5 @@
 {
-  "name": "chatjs",
+  "name": "chat-js",
   "version": "1.0.0",
   "description": "Simple chat using socket.io",
   "main": "server.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mikael-R/ChatJS.git"
+    "url": "git+https://github.com/Mikael-R/chat-js.git"
   },
   "author": "Mikael Rolim de Aquino",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Mikael-R/ChatJS/issues"
+    "url": "https://github.com/Mikael-R/chat-js/issues"
   },
-  "homepage": "https://github.com/Mikael-R/ChatJS#readme",
+  "homepage": "https://github.com/Mikael-R/chat-js#readme",
   "dependencies": {
     "ejs": "^3.1.3",
     "express": "^4.17.1",

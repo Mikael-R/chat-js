@@ -18,10 +18,10 @@ app.get('/', function(req, res) {
 let messages = []
 
 io.on('connection', socket => {
-    console.log(`> Socket id conected: ${socket.id}`)
+    console.log(`> Socket id connected: ${socket.id}`)
 
     socket.on('sendMessage', data => {
         messages.push(data)
-        socket.broadcast.emit('recivedMessage', data)
+        socket.broadcast.emit('receivedMessage', data)
     })
 })

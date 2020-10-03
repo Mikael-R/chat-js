@@ -22,7 +22,7 @@ function renderMessage(message) {
     messages.scrollTop = messages.scrollHeight
 }
 
-socket.on('recivedMessage', message => {
+socket.on('receivedMessage', message => {
     renderMessage(message)
 })
 
